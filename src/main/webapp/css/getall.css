@@ -1,0 +1,54 @@
+@charset "ISO-8859-1";
+/* Base table style */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Default table styles for larger screens */
+table.default-table {
+  display: table;
+}
+
+/* Responsive table styles for smaller screens */
+@media (max-width: 600px) {
+  table.default-table {
+    display: block;
+    width: 100%;
+  }
+
+  td, th {
+    display: block;
+    text-align: left;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    left: 6px;
+    content: attr(data-label);
+  }
+}
+
+/* Red and blue colors */
+tr:nth-child(odd) {
+  background-color: #ffcccc; /* Red color for odd rows */
+}
+
+tr:nth-child(even) {
+  background-color: #cceeff; /* Blue color for even rows */
+}
